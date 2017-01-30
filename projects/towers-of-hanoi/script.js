@@ -30,7 +30,7 @@ function emptyPole (pole){                        //evaluates if pole is empty
 }
 
 function win() {
-  if(pole3.discs == [disc3,disc2,disc1]) //evaluates if user has won the game
+  if(pole3.discs[0]==3 && pole3.discs[1]== 2 && pole3.discs[2] == 1)
   {
   alert("You win!");
   return true;
