@@ -57,6 +57,13 @@ div.poles {
   margin-top: auto;
 }
 
+.highlight{
+  border: solid pink;
+}
+
+.highlight2{
+  border: solid green;
+}
 /* .poles > #pole2 {
   border: solid yellow;
   background: green;

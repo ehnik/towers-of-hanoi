@@ -16,6 +16,12 @@ disc3 =
   value: 3,
   pole: pole1
 }
+
+allDiscs = [
+  disc1,
+  disc2,
+  disc3
+]
 //var disc4 = 4;
 //var disc5 = 5;
 
@@ -82,11 +88,11 @@ function move (poleOrg, poleNew) {
   }
 }
 
-$(".discs").click(function(){
+//$(".discs").click(function(){
+/*function move(poleOrg,poleNew) {
   var poleOrg;
   if($(this).prev().length == 0)
   {                                         //current pole of disc clicked
-    /*move($(this).parent(),pole2)*/
     if($(this).parent().attr("id") == "pole1")
     {
       poleOrg = pole1;
@@ -100,17 +106,118 @@ $(".discs").click(function(){
       poleOrg = pole3;
     }
   move(poleOrg,pole2);
-  /*move(poleOrg,pole2);*/
   }
   else {
   alert("inavlid move!")
   console.log($(this).length)
   }
-})
+} */
 
 $(function() {
-   $(".discs").draggable({containment: $("body")});
-   $("#pole2").droppable();
-   $("#pole3").droppable();
-   $("#pole1").droppable();
- });
+   $(".discs").draggable({containment: $(".container")});
+   $(".discs").draggable({revert:'invalid'});
+   $("#pole2").droppable({
+    drop: function(event,ui) {
+      var currentDisc = ui.draggable;
+      var poleNew;
+      var poleOrg;
+      if(currentDisc.parent().attr("id") == "pole1")  //convert UI origin pole to variable pole
+      {
+        poleOrg = pole1;
+      }
+      if(currentDisc.parent().attr("id") == "pole2")
+      {
+        poleOrg = pole2;
+      }
+      if(currentDisc.parent().attr("id") == "pole3")
+      {
+        poleOrg = pole3;
+      }
+
+      if($(this).attr("id") == "pole1")  //equate UI destination pole to variable pole
+      {
+        poleNew = pole1;
+      }
+      if($(this).attr("id") == "pole2")
+      {
+        poleNew = pole2;
+      }
+      if($(this).attr("id") == "pole3")
+      {
+        poleNew = pole3;
+      }
+
+      move(poleOrg,poleNew);
+
+    }
+  })
+
+   $("#pole3").droppable({
+     drop: function(event,ui) {
+         var currentDisc = ui.draggable;
+         var poleNew;
+         var poleOrg;
+         if(currentDisc.parent().attr("id") == "pole1")  //convert UI origin pole to variable pole
+         {
+           poleOrg = pole1;
+         }
+         if(currentDisc.parent().attr("id") == "pole2")
+         {
+           poleOrg = pole2;
+         }
+         if(currentDisc.parent().attr("id") == "pole3")
+         {
+           poleOrg = pole3;
+         }
+
+         if($(this).attr("id") == "pole1")  //equate UI destination pole to variable pole
+         {
+           poleNew = pole1;
+         }
+         if($(this).attr("id") == "pole2")
+         {
+           poleNew = pole2;
+         }
+         if($(this).attr("id") == "pole3")
+         {
+           poleNew = pole3;
+         }
+
+         move(poleOrg,poleNew);
+         }
+      })
+
+   $("#pole1").droppable({
+     drop: function(event,ui) {
+         var currentDisc = ui.draggable;
+         var poleNew;
+         var poleOrg;
+         if(currentDisc.parent().attr("id") == "pole1")  //convert UI origin pole to variable pole
+         {
+           poleOrg = pole1;
+         }
+         if(currentDisc.parent().attr("id") == "pole2")
+         {
+           poleOrg = pole2;
+         }
+         if(currentDisc.parent().attr("id") == "pole3")
+         {
+           poleOrg = pole3;
+         }
+
+         if($(this).attr("id") == "pole1")  //equate UI destination pole to variable pole
+         {
+           poleNew = pole1;
+         }
+         if($(this).attr("id") == "pole2")
+         {
+           poleNew = pole2;
+         }
+         if($(this).attr("id") == "pole3")
+         {
+           poleNew = pole3;
+         }
+         move(poleOrg,poleNew);
+       }
+   })
+})
