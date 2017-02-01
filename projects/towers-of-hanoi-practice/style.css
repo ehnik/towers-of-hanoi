@@ -1,0 +1,92 @@
+
+html,body{
+  height: 75%;
+  width: auto;
+}
+.container{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: : space-between;
+  background-color: #333;
+  margin: 0 auto;
+
+}
+.poles{
+  background: brown;
+  height: 300px;
+  width: 50px;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow: visible;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
+.discs {
+  border: solid purple;
+  background: green;
+}
+
+#disc1{
+  /*margin-top: auto;
+  margin-right: 0;
+  margin-bottom: 0; */
+  height: 25px;
+  width: 100px;
+  order:1;
+}
+
+#disc2{
+  height: 25px;
+  width: 120px;
+  /*margin-top: auto;
+  margin-bottom: 0;*/
+  order: 2;
+
+}
+
+#disc3{
+  height: 25px;
+  width: 140px;
+/*  margin-top: auto; */
+  order:3;
+}
+
+.highlight{
+  border: solid pink;
+}
+
+.highlight2{
+  border: solid green;
+}
+
+.legal{
+
+}
+.illegal{
+
+}
+/* .poles > #pole2 {
+  border: solid yellow;
+  background: green;
+  height: 100px;
+  width: 100px;
+  margin: 0 auto;
+
+}
+
+.poles > #pole3 {
+  border: solid yellow;
+  background: orange;
+  height: 100px;
+  width: 100px;
+  margin: 0 auto;
+
+}
